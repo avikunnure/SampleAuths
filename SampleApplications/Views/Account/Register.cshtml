@@ -1,0 +1,64 @@
+﻿@model SampleApplications.Models.RegisterModel
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="row justify-content-center">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <form method="post">
+                    <div class="col-12">
+                        <h3 class="text-center" >Register </h3>
+                    </div>
+                    <div class="row">
+
+                        <div class="form-group col-6">
+                            @Html.LabelFor(x=>x.FirstName)
+                            @Html.TextBoxFor(x=>x.FirstName,"",new {@class="form-control"})
+                            @Html.ValidationMessageFor(x=>x.FirstName,"",new {@class="text-danger"})
+                        </div>
+                        <div class="form-group col-6">
+                            @Html.LabelFor(x=>x.LastName)
+                            @Html.TextBoxFor(x=>x.LastName,"",new {@class="form-control"})
+                            @Html.ValidationMessageFor(x=>x.LastName,"",new {@class="text-danger"})
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="form-group col-12">
+                            @Html.LabelFor(x=>x.Email)
+                            @Html.TextBoxFor(x=>x.Email,"",new {@class="form-control"})
+                            @Html.ValidationMessageFor(x=>x.Email,"",new {@class="text-danger"})
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-6">
+                            @Html.LabelFor(x=>x.Password)
+                            @Html.PasswordFor(x=>x.Password,new {@class="form-control"})
+                            @Html.ValidationMessageFor(x=>x.Password,"",new {@class="text-danger"})
+                        </div>
+                        <div class="form-group col-6">
+                            @Html.LabelFor(x=>x.ConfirmPassword)
+                            @Html.PasswordFor(x=>x.ConfirmPassword,new {@class="form-control"})
+                            @Html.ValidationMessageFor(x=>x.ConfirmPassword,"",new {@class="text-danger"})
+                        </div>
+                    </div>
+                    <div class="row">
+                        @Html.ValidationSummary(false,"",new {@class="text-danger"})
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                            <div class="col-6">
+                                <a href="@Url.Action("Login","Account")" role="button" class="btn btn-success">Already registered go to login</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
